@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 14:40:35 by kkweon           ###   ########.fr       */
+/*   Created: 2026/02/17 14:30:15 by kkweon            #+#    #+#             */
+/*   Updated: 2026/02/17 14:48:47 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP
-# define PUSH_SWAP
-#include <stdlib.h>
-#include <unistd.h>
 #include "push_swap.h"
-#include "./libft/libft.h"
-#include "./ft_printf/ft_printf.h"
 
-void num_check(char **argv);
-void print_error(void);
-
-#endif
+void print_error(void)
+{
+    ft_printf("ERROR\n");
+}

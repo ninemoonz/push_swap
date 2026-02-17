@@ -6,17 +6,17 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/13 16:49:21 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 15:53:44 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "./libft/libft.h"
 #include "./ft_printf/ft_printf.h"
+#include "push_swap.h"
 
 int main (int argc, char **argv)
 {
-	int i;
 	char **num_arr;
 	int count;
 
@@ -34,11 +34,14 @@ int main (int argc, char **argv)
 		num_arr = &argv[1];
 		count = argc - 1;
 	}
-	i = 0;
-	while (i < count)
+	int i;
+
+	i = 1;
+	while (argv[i] != NULL)
 	{
-		printf("%s\n", num_arr[i]);
+		printf("%s\n", argv[i]);
 		i++;
 	}
+	num_check(argv);
 	return (0);
 }

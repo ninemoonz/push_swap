@@ -13,6 +13,8 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 
 SRC = push_swap.c \
+	num_check.c \
+	print_error.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m
@@ -26,7 +28,7 @@ all:  $(LIBFT) $(FT_PRINTF) $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(GREEN)Linking $(NAME)...$(RESET)"
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FT_PRINF) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@echo "$(GREEN)$(NAME) created successfully!$(RESET)"
 
 %.o: %.c
