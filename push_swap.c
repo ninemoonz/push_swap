@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 16:49:55 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 17:01:27 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main (int argc, char **argv)
 	int count;
 
 	if (argc < 2) // no arguments
-		return (-1);
+		print_error();
 	else if (argc == 2) // when the arguments are passed in as a string ./out "1 2 3 4 5"
 	{
 		num_arr = ft_split(argv[1], ' ');
