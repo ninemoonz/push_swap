@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 15:57:30 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 16:36:23 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,32 @@ int double_check(char **argv)
     return (1);
 }
 
-void num_check(char **argv)
+int *atoi_arr(int argc, char **argv)
 {
+	static int *int_arr;
+	int i;
+	int j;
+
+	i = 1;
+	j = 0;
+	int_arr = malloc((argc - 1) * sizeof(int));
+	while (argv[i] != NULL)
+	{
+		int_arr[j] = ft_atoi(argv[i]); 
+		j++;
+		i++;
+	}
+	return (int_arr);
+}
+
+void num_check(int argc, char **argv)
+{
+	int *int_arr;
 	if (empty_check(argv) == 1)
 	{
-		ft_printf("emtpy check passes\n");
 		if (sign_check(argv) == 1)
 		{
-			ft_printf("sign check passes!\n");
+			int_arr = atoi_arr(argc, argv);
 		}
 		else
 		{
@@ -80,4 +98,12 @@ void num_check(char **argv)
 	}
 	else
 		print_error();
+	int i;
+
+	i = 0;
+	while (i < argc - 1)
+	{
+		printf("%d\n", int_arr[i]);		
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 15:53:44 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 16:36:48 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ int main (int argc, char **argv)
 		printf("%s\n", argv[i]);
 		i++;
 	}
-	num_check(argv);
+	num_check(argc, argv);
 	return (0);
 }
