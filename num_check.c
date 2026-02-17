@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 16:36:23 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 16:48:52 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,18 @@ int sign_check(char **argv)
 	return (1);
 }
 
-int double_check(char **argv)
+int double_check(int argc, int *num_arr)
 {
     int i;
     int j;
 
-    i = 1;
-    while (argv[i] != NULL)
+    i = 0;
+    while (i < (argc - 1))
     {
         j = i + 1;
-        while(argv[j] != NULL)
+        while(j < (argc - 1))
         {
-            if (*argv[i] == *argv[j])
+            if (num_arr[i] == num_arr[j])
                 return (0);
             j++;
         }
@@ -73,6 +73,8 @@ int *atoi_arr(int argc, char **argv)
 	i = 1;
 	j = 0;
 	int_arr = malloc((argc - 1) * sizeof(int));
+	if (!int_arr)
+		return (NULL);
 	while (argv[i] != NULL)
 	{
 		int_arr[j] = ft_atoi(argv[i]); 
@@ -82,7 +84,7 @@ int *atoi_arr(int argc, char **argv)
 	return (int_arr);
 }
 
-void num_check(int argc, char **argv)
+int num_check(int argc, char **argv)
 {
 	int *int_arr;
 	if (empty_check(argv) == 1)
@@ -90,20 +92,16 @@ void num_check(int argc, char **argv)
 		if (sign_check(argv) == 1)
 		{
 			int_arr = atoi_arr(argc, argv);
-		}
-		else
-		{
-			ft_printf("sign check fails\n");
+			if (double_check(argc, int_arr) == 1)
+			{
+				return (1);
+			}
 		}
 	}
 	else
-		print_error();
-	int i;
-
-	i = 0;
-	while (i < argc - 1)
 	{
-		printf("%d\n", int_arr[i]);		
-		i++;
+		print_error();
+		return (0);
 	}
+	return (0);
 }

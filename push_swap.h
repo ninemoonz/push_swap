@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 16:32:19 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 16:49:20 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "./libft/libft.h"
 #include "./ft_printf/ft_printf.h"
 
-void num_check(int argc, char **argv);
+int num_check(int argc, char **argv);
 void print_error(void);
 
 #endif

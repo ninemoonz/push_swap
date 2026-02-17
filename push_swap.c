@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 16:36:48 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/17 16:49:55 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,6 @@ int main (int argc, char **argv)
 		num_arr = &argv[1];
 		count = argc - 1;
 	}
-	int i;
-
-	i = 1;
-	while (argv[i] != NULL)
-	{
-		printf("%s\n", argv[i]);
-		i++;
-	}
-	num_check(argc, argv);
+	printf("%d\n", num_check(argc, argv));
 	return (0);
 }
