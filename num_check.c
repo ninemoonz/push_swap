@@ -6,11 +6,21 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 16:48:52 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/18 18:28:36 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+int  is_sign(char c)
+{
+	return (c == '+' || c == '-');
+}
 
 int empty_check(char **argv)
 {
@@ -20,27 +30,28 @@ int empty_check(char **argv)
     while (argv[i] != NULL)
     {
         if (argv[i][0] == '\0')
-		{
 			return (0);
-		}
         i++;
     }
 	return (1);
 }
-
-int sign_check(char **argv)
+int validity_check(char *s)
 {
-    int i;
-    int j;
-
-    i = 1;
-    j = 0;
-    while (argv[i] != NULL)
-    {
-        if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-'))
+	int i;
+	
+	i = 0;
+	if (!s || s[0] == '\0')
+		return (0);
+	if (is_sign(s[i]))
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i])
+	{
+		if (!is_digit(s[i]))
 			return (0);
-        i++;
-    }
+		i++;
+	}
 	return (1);
 }
 
@@ -64,44 +75,53 @@ int double_check(int argc, int *num_arr)
     return (1);
 }
 
-int *atoi_arr(int argc, char **argv)
+int atoi_arr(char *s)
 {
-	static int *int_arr;
-	int i;
-	int j;
+	long long	n;
+	int			sign;
+	int			i;
 
-	i = 1;
-	j = 0;
-	int_arr = malloc((argc - 1) * sizeof(int));
-	if (!int_arr)
-		return (NULL);
-	while (argv[i] != NULL)
+	n = 0;
+	sign = 1;
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
 	{
-		int_arr[j] = ft_atoi(argv[i]); 
-		j++;
+		if (s[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (int_arr);
+	while (s[i])
+	{
+		n = n * 10 + (s[i] - '0');
+		if (sign == 1 && n > INT_MAX)
+			print_error();
+		if (sign == -1 && -n < INT_MIN)
+			print_error();
+		i++;
+	}
+	return (ft_atoi(s));
 }
 
-int num_check(int argc, char **argv)
+int *num_check(int argc, char **argv)
 {
-	int *int_arr;
-	if (empty_check(argv) == 1)
-	{
-		if (sign_check(argv) == 1)
-		{
-			int_arr = atoi_arr(argc, argv);
-			if (double_check(argc, int_arr) == 1)
-			{
-				return (1);
-			}
-		}
-	}
-	else
-	{
+	int *num_arr;
+	int i;
+
+	if (argc <= 1)
+		return (NULL);
+	
+	num_arr = (int *)malloc((argc - 1) * sizeof(int));
+	if (!num_arr)
 		print_error();
-		return (0);
+	
+	i = 1;
+	while (i < argc)
+	{
+		if (!validity_check(argv[i]))
+			print_error();
+		num_arr[i - 1] = atoi_arr(argv[i]);
+		i++;
 	}
-	return (0);
+	double_check(argc - 1, num_arr);
+	return (num_arr);
 }

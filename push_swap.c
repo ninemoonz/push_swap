@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/17 17:01:27 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/18 16:33:38 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include "./ft_printf/ft_printf.h"
 #include "push_swap.h"
 
-int main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	char **num_arr;
-	int count;
+	char	**num_arr;
+	int		count;
 
-	if (argc < 2) // no arguments
+	if (argc < 2)
 		print_error();
-	else if (argc == 2) // when the arguments are passed in as a string ./out "1 2 3 4 5"
+	else if (argc == 2)
 	{
 		num_arr = ft_split(argv[1], ' ');
 		count = 0;
 		while (num_arr[count])
 			count++;
 	}
-	else // when the arguments are passed in as multiple arguments ./out 1 2 3 4 5
+	else
 	{
 		num_arr = &argv[1];
 		count = argc - 1;
