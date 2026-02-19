@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/18 18:28:36 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/19 16:16:06 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,6 @@ int  is_sign(char c)
 	return (c == '+' || c == '-');
 }
 
-int empty_check(char **argv)
-{
-    int i;
-
-    i = 1;
-    while (argv[i] != NULL)
-    {
-        if (argv[i][0] == '\0')
-			return (0);
-        i++;
-    }
-	return (1);
-}
 int validity_check(char *s)
 {
 	int i;
@@ -55,27 +42,26 @@ int validity_check(char *s)
 	return (1);
 }
 
-int double_check(int argc, int *num_arr)
+void double_check(int argc, int *num_arr)
 {
     int i;
     int j;
 
     i = 0;
-    while (i < (argc - 1))
+    while (i < argc)
     {
         j = i + 1;
-        while(j < (argc - 1))
+        while(j < argc)
         {
             if (num_arr[i] == num_arr[j])
-                return (0);
+                print_error();
             j++;
         }
         i++;
     }
-    return (1);
 }
 
-int atoi_arr(char *s)
+int atoi_checked(char *s)
 {
 	long long	n;
 	int			sign;
@@ -119,7 +105,7 @@ int *num_check(int argc, char **argv)
 	{
 		if (!validity_check(argv[i]))
 			print_error();
-		num_arr[i - 1] = atoi_arr(argv[i]);
+		num_arr[i - 1] = atoi_checked(argv[i]);
 		i++;
 	}
 	double_check(argc - 1, num_arr);

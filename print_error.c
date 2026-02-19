@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 14:30:15 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/18 17:12:00 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/19 16:19:10 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void print_error(void)
 {
-    ft_printf("ERROR\n");
-    exit(0);
+    write(2, "Error\n", 6);
+    exit(1);
 }
