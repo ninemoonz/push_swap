@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/19 18:25:41 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/20 13:30:40 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,13 @@
 
 int	main(int argc, char **argv)
 {
-	char **char_arr;
+	t_node *stack_a;
+	t_node *stack_b;
 	int	*num_arr;
 	int		count;
 
-	if (argc < 2)
-		print_error();
-	else if (argc == 2)
-	{
-		char_arr = ft_split(argv[1], ' ');
-		count = 0;
-		while (char_arr[count])
-			count++;
-	}
-	else
-	{
-		char_arr = &argv[1];
-		count = argc - 1;
-	}
+	stack_a = NULL;
+	stack_b = NULL;
 	num_arr = num_check(argc, argv);
 	
 	int i;
@@ -42,7 +31,7 @@ int	main(int argc, char **argv)
 	i = 0;
 	t_node *a;
 	a = NULL;
-	t_node *new_node(int value)
+	t_node *new_node (int value)
 	{
 		t_node *node;
 
@@ -54,7 +43,6 @@ int	main(int argc, char **argv)
 		node->next = NULL;
 		return node;
 	}
-	
 	free(num_arr);
 	return (0);
 }

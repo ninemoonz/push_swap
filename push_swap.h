@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/19 16:23:53 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/20 13:08:06 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 typedef struct s_node
 {
     int value;
-    int index;
     struct s_node *next;
+    struct s_node *prev;
 }   t_node;
 
 int *num_check(int argc, char **argv);

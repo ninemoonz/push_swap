@@ -11,6 +11,8 @@ _This project has been created as part of the 42 curriculum by kkweon_
 ---
 
 ## Resources
+[Geek for Geeks - Struct](https://www.geeksforgeeks.org/c/structures-c/) \
+[Geek for Geeks - Linked List](https://www.geeksforgeeks.org/c/linked-list-in-c/)
 
 ---
 

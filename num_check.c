@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/19 16:16:06 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/20 13:03:52 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ int *num_check(int argc, char **argv)
 
 	if (argc <= 1)
 		return (NULL);
-	
 	num_arr = (int *)malloc((argc - 1) * sizeof(int));
 	if (!num_arr)
 		print_error();
