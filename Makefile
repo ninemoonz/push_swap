@@ -15,6 +15,7 @@ CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 SRC = push_swap.c \
 	num_check.c \
 	print_error.c \
+	ps_utils.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m
