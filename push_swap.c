@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/20 16:17:48 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/23 17:14:34 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node *fill_stack(char **argv)
 	int i;
 
 	stack = NULL;
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		append(&stack, ft_atoi(argv[i]));
@@ -34,16 +34,25 @@ int	main(int argc, char **argv)
 {
 	t_node *stack_a;
 	t_node *stack_b;
+	t_node *test;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	if (num_check(argc, argv))
 			stack_a = fill_stack(argv);
 
-	while (stack_a != NULL)
+	test = stack_a;
+	while (test != NULL)
 	{
-		stack_a = stack_a->next;
-		printf("%d\n", stack_a->value);
+		ft_printf("%d\n", test->value);
+		test = test->next;
+	}
+	sa(&stack_a);
+	test = stack_a;
+	while (test != NULL)
+	{
+		ft_printf("%d\n", test->value);
+		test = test->next;
 	}
 	return (0);
 }

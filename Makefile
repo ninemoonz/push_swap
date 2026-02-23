@@ -16,6 +16,7 @@ SRC = push_swap.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
+	move.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m
