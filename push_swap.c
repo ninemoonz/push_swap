@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/23 17:14:34 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/24 15:26:51 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	main(int argc, char **argv)
 		ft_printf("%d\n", test->value);
 		test = test->next;
 	}
-	return (0);
+	return (-1);
 }
