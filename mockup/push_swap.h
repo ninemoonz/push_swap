@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/25 13:31:29 by koodal           ###   ########.fr       */
+/*   Created: 2026/02/25 13:32:01 by koodal            #+#    #+#             */
+/*   Updated: 2026/02/25 13:37:17 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,14 @@
 #include <unistd.h>
 #include <limits.h>
 #include "push_swap.h"
-#include "libft.h"
-#include "ft_printf.h"
+#include "../../codam_projects/libft/libft.h"
+#include "../../codam_projects/ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
-	int value;
-	struct s_node *next;
-	struct s_node *prev;
+    int value;
+    struct s_node *next;
+    struct s_node *prev;
 } t_node;
-
-int *num_check(int argc, char **argv);
-void print_error(void);
-void append(t_node **head, int value);
-void swap(t_node **stack);
-void sa(t_node **stack);
-void sb(t_node **stack);
-void ss(t_node **stack_a, t_node **stack_b);
-void pa(t_node **stack_a, t_node **stack_b);
-void pb(t_node **stack_a, t_node **stack_b);
 
 #endif
