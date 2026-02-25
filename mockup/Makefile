@@ -14,7 +14,8 @@ CFLAGS := -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)  -I.
 
 SRC = main.c \
 	push_swap.c \
-	input_check.c
+	input_check.c \
+	error_exit.c
 
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 13:32:01 by koodal            #+#    #+#             */
-/*   Updated: 2026/02/25 18:51:21 by koodal           ###   ########.fr       */
+/*   Created: 2026/02/25 19:03:41 by koodal            #+#    #+#             */
+/*   Updated: 2026/02/25 19:33:31 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
-# include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
-# include "push_swap.h"
-# include <limits.h>
-# include <stdlib.h>
-# include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-typedef struct s_node
+int	main(void)
 {
-	int				value;
-	struct s_node	*next;
-	struct s_node	*prev;
-}					t_node;
-
-int					input_check(int argc, char **argv);
-void				push_swap(void);
-void				error_exit(void);
-
-#endif
+	int num[3] = {1, 2, 3};
+	printf("&num: %p\n", &num);
+	printf("&num[0]: %p\n", &num[0]);
+	printf("&num[1]: %p\n", &num[1]);
+	printf("&num[2]: %p\n", &num[2]);
+	printf("*num: %d\n", *num);
+	printf("*num[0]: %d\n", num[0]);
+	printf("*num[1]: %d\n", num[1]);
+	printf("*num[2]: %d\n", num[2]);
+	return (0);
+}
