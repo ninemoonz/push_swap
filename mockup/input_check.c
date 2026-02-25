@@ -6,23 +6,20 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 17:03:02 by koodal            #+#    #+#             */
-/*   Updated: 2026/02/25 18:52:12 by koodal           ###   ########.fr       */
+/*   Updated: 2026/02/26 00:11:24 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	input_check(int argc, char **argv)
+int	*input_check(int argc, char **argv)
 {
-	if (argc <= 1)
-	{
-		printf("This is too short\n");
-		return (argc);
-	}
-	else
-	{
-		printf("Doable\n");
-		printf("%p\n", &argv);
-	}
+	char **char_arr;
+	int *int_arr;
+
+	if (argc == 1 || !argv[1][0])
+		error_exit();
+	else if (argc == 2 && argv[1][0])
+		char_arr = ft_split(argv[1], ' ');
 	return (argc);
 }
