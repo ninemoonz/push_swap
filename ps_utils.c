@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:13:32 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 15:43:40 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/26 15:45:31 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ int	stack_size(t_node *stack)
 
 int	is_empty(t_node *stack)
 {
-	if (stack == NULL)
-		return (0);
-	return (1);
+	return (stack == NULL);
 }
 
 void	free_stack(t_node *stack)
