@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/24 16:53:26 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/24 17:16:55 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,28 @@ t_node *fill_stack(char **argv)
 	return (stack);
 }
 
-int	main(int argc, char **argv)
-{
-	t_node *stack_a;
-	t_node *stack_b;
-	t_node *test;
+// int	main(int argc, char **argv)
+// {
+// 	t_node *stack_a;
+// 	t_node *stack_b;
+// 	t_node *test;
 	
-	stack_a = NULL;
-	stack_b = NULL;
-	if (num_check(argc, argv))
-		stack_a = fill_stack(argv);
-	test = stack_a;
-	while (test != NULL)
-	{
-		ft_printf("%d\n", test->value);
-		test = test->next;
-	}
-	sa(&stack_a);
-	test = stack_a;
-	while (test != NULL)
-	{
-		ft_printf("%d\n", test->value);
-		test = test->next;
-	}
-	return (-1);
-}
+// 	stack_a = NULL;
+// 	stack_b = NULL;
+// 	if (num_check(argc, argv))
+// 		stack_a = fill_stack(argv);
+// 	test = stack_a;
+// 	while (test != NULL)
+// 	{
+// 		ft_printf("%d\n", test->value);
+// 		test = test->next;
+// 	}
+// 	sa(&stack_a);
+// 	test = stack_a;
+// 	while (test != NULL)
+// 	{
+// 		ft_printf("%d\n", test->value);
+// 		test = test->next;
+// 	}
+// 	return (-1);
+// }

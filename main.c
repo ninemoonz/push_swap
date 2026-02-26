@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/23 15:27:00 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 13:46:59 by kkweon           ###   ########.fr       */
+/*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
+/*   Updated: 2026/02/26 13:29:31 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_node **stack, int value)
+int	main(int argc, char **argv)
 {
-	t_node	*new_top;
+	t_node	*stack_a;
+	t_node	*stack_b;
+	int		i;
 
-	new_top = create_node(value);
-	new_top->next = *stack;
-	*stack = new_top;
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	else if (argc >= 3)
+		argv = &argv[1];
+	i = 0;
+	while (argv[i])
+	{
+		printf("%s\n", argv[i]);
+		i++;
+	}
+	return (0);
 }

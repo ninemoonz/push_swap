@@ -12,7 +12,8 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 
-SRC = push_swap.c \
+SRC = main.c \
+	push_swap.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
