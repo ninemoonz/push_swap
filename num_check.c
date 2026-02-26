@@ -6,26 +6,26 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 12:38:32 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/26 16:33:19 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_digit(char c)
+int	is_digit(char c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-int  is_sign(char c)
+int	is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
 
-int validity_check(char *s)
+int	validity_check(char *s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	if (!s || s[0] == '\0')
 		return (0);
@@ -42,26 +42,26 @@ int validity_check(char *s)
 	return (1);
 }
 
-void double_check(int argc, int *num_arr)
+void	double_check(int argc, int *num_arr)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while (i < argc)
-    {
-        j = i + 1;
-        while(j < argc)
-        {
-            if (num_arr[i] == num_arr[j])
-                print_error();
-            j++;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (num_arr[i] == num_arr[j])
+				print_error();
+			j++;
+		}
+		i++;
+	}
 }
 
-int atoi_checked(char *s)
+int	atoi_check(char *s)
 {
 	long long	n;
 	int			sign;
@@ -85,16 +85,19 @@ int atoi_checked(char *s)
 			print_error();
 		i++;
 	}
-	return (ft_atoi(s));
+	return ((int)(sign * n));
 }
 
-int *num_check(int argc, char **argv)
+int	*num_check(int argc, char **argv)
 {
-	int *num_arr;
-	int i;
+	char	**char_arr;
+	int		*num_arr;
+	int		i;
 
 	if (argc <= 1)
 		return (NULL);
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	num_arr = (int *)malloc((argc - 1) * sizeof(int));
 	if (!num_arr)
 		print_error();

@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:13:32 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 15:45:31 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/26 16:27:44 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,44 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-void	append(t_node **head, int value)
-{
-	t_node	*new_node;
-	t_node	*current_node;
+// void	append(t_node **head, int value)
+// {
+// 	t_node	*new_node;
+// 	t_node	*current_node;
 
-	new_node = create_node(value);
-	if (!*head)
-	{
-		*head = new_node;
+// 	new_node = create_node(value);
+// 	if (!*head)
+// 	{
+// 		*head = new_node;
+// 		return ;
+// 	}
+// 	current_node = *head;
+// 	while (current_node->next != NULL)
+// 		current_node = current_node->next;
+// 	current_node->next = new_node;
+// }
+
+void	push(t_node **stack, int value)
+{
+	t_node	*new_top;
+
+	new_top = create_node(value);
+	if (!new_top)
 		return ;
-	}
-	current_node = *head;
-	while (current_node->next != NULL)
-		current_node = current_node->next;
-	current_node->next = new_node;
+	new_top->next = *stack;
+	*stack = new_top;
+}
+
+int	remove_top(t_node **stack)
+{
+	t_node	*temp;
+	int		value;
+
+	temp = *stack;
+	value = temp->value;
+	*stack = temp->next;
+	free(temp);
+	return (value);
 }
 
 int	stack_size(t_node *stack)
