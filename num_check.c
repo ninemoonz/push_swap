@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 16:33:19 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/27 16:50:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,27 +88,56 @@ int	atoi_check(char *s)
 	return ((int)(sign * n));
 }
 
+int	count_strarr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr)
+		i++;
+	return (i);
+}
+
+int	*args_process(char **char_arr, int len)
+{
+	int	*num_arr;
+	int	i;
+
+	num_arr = (int *)malloc((len) * sizeof(int));
+	if (!num_arr)
+		print_error();
+	i = 0;
+	while (i < len)
+	{
+		if (!validity_check(char_arr[i]))
+			print_error();
+		num_arr[i] = atoi_checked(char_arr[i]);
+		i++;
+	}
+	double_check(len, num_arr);
+	return (num_arr);
+}
+
 int	*num_check(int argc, char **argv)
 {
 	char	**char_arr;
-	int		*num_arr;
-	int		i;
+	int		*int_arr;
+	int		len;
 
 	if (argc <= 1)
 		return (NULL);
 	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	num_arr = (int *)malloc((argc - 1) * sizeof(int));
-	if (!num_arr)
-		print_error();
-	i = 1;
-	while (i < argc)
 	{
-		if (!validity_check(argv[i]))
-			print_error();
-		num_arr[i - 1] = atoi_checked(argv[i]);
-		i++;
+		char_arr = ft_split(argv[1], ' ');
+		len = count_strarr(char_arr);
 	}
-	double_check(argc - 1, num_arr);
-	return (num_arr);
+	else
+	{
+		char_arr = argv + 1;
+		len = argc - 1;
+	}
+	int_arr = args_process(char_arr, len);
+	if (argc == 2)
+		split_free(char_arr, len);
+	return (int_arr);
 }

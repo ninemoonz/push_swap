@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/26 13:25:44 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/02/27 16:27:15 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ typedef struct s_node
 int					main(int argc, char **argv);
 int					*num_check(int argc, char **argv);
 void				print_error(void);
-void				append(t_node **head, int value);
-void				swap(t_node **stack);
-void				sa(t_node **stack);
-void				sb(t_node **stack);
-void				ss(t_node **stack_a, t_node **stack_b);
-void				pa(t_node **stack_a, t_node **stack_b);
-void				pb(t_node **stack_a, t_node **stack_b);
+void				split_free(char **arr_malloc, int i);
+t_node				*create_node(int value);
+void				push(t_node **stack, int value);
+int					remove_top(t_node **stack);
+int					stack_size(t_node *stack);
+int					is_empty(t_node *stack);
+void				free_stack(t_node *stack);
+void				split_free(char **arr_malloc, int i);
 
 #endif
