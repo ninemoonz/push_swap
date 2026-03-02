@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 15:27:00 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/02 22:18:59 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/02 22:21:03 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	reverse_rotate(t_node **stack)
 	new_top = tmp->next;
 	tmp->next = NULL;
 	new_top->next = *stack;
+	*stack = new_top;
 }
 
 void	rra(t_node **stack_a)
