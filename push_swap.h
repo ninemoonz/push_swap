@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/27 16:27:15 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/02 15:02:45 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int					stack_size(t_node *stack);
 int					is_empty(t_node *stack);
 void				free_stack(t_node *stack);
 void				split_free(char **arr_malloc, int i);
+int					count_strarr(char **arr);
 
 #endif
