@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/02 15:04:20 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 17:10:56 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,6 @@ int	atoi_check(char *s)
 		i++;
 	}
 	return ((int)(sign * n));
-}
-
-int	count_strarr(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	return (i);
 }
 
 int	*args_process(char **char_arr, int len)

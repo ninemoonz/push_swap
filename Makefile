@@ -21,6 +21,7 @@ SRC = main.c \
 	swap.c \
 	rotate.c \
 	small_sort.c \
+	turk_sort.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m

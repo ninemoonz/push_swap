@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 16:57:53 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 17:38:51 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				rank;
 	struct s_node	*next;
 }					t_node;
 
@@ -59,5 +60,7 @@ void				sort_two(t_node **stack);
 void				sort_three(t_node **stack);
 void				small_sort(t_node **stack, int count);
 void				sort_it(t_node **stack, int count);
+
+void				ranking(t_node *stack);
 
 #endif
