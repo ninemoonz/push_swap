@@ -12,11 +12,16 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 
-SRC = push_swap.c \
+SRC = main.c \
+	push_swap.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
-	move.c \
+	push.c \
+	swap.c \
+	rotate.c \
+	small_sort.c \
+	turk_sort.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m

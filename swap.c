@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 17:35:06 by kkweon           ###   ########.fr       */
+/*   Created: 2026/03/03 16:56:22 by kkweon            #+#    #+#             */
+/*   Updated: 2026/03/03 16:56:46 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*create_node(int value)
+void	swap(t_node **stack)
 {
-	t_node	*new_node;
+	int	tmp;
 
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->value = value;
-	new_node->rank = 0;
-	new_node->next = NULL;
-	return (new_node);
+	if (!*stack || !(*stack)->next)
+		return ;
+	tmp = (*stack)->value;
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = tmp;
+}
+
+void	sa(t_node **stack_a)
+{
+	swap(stack_a);
+	ft_printf("sa\n");
+}
+
+void	sb(t_node **stack_b)
+{
+	swap(stack_b);
+	ft_printf("sb\n");
+}
+
+void	ss(t_node **stack_a, t_node **stack_b)
+{
+	swap(stack_a);
+	swap(stack_b);
+	ft_printf("ss\n");
 }

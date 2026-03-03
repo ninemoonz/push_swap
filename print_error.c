@@ -6,14 +6,14 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 14:30:15 by kkweon            #+#    #+#             */
-/*   Updated: 2026/02/19 16:19:10 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 17:05:06 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_error(void)
+void	print_error(void)
 {
-    write(2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
