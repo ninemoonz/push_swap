@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   turk_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 16:00:09 by kkweon           ###   ########.fr       */
+/*   Created: 2026/03/03 16:01:50 by kkweon            #+#    #+#             */
+/*   Updated: 2026/03/03 16:02:42 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf/ft_printf.h"
-#include "./libft/libft.h"
 #include "push_swap.h"
-#include <stdio.h>
+
+void	turk_sort(t_node **stack_a, t_node **stack_b)
+{
+}

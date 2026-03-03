@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/02 15:22:50 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 16:53:23 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ t_node	*build_stack(int *num_arr, int len)
 	int		i;
 
 	stack = NULL;
-	i = 0;
-	while (i < len)
+	i = len - 1;
+	while (i >= 0)
 	{
 		push(&stack, num_arr[i]);
-		i++;
+		i--;
 	}
 	return (stack);
 }
@@ -45,6 +45,7 @@ int	main(int argc, char **argv)
 		len = argc - 1;
 	num_arr = num_check(argc, argv);
 	stack_a = build_stack(num_arr, len);
+	small_sort(&stack_a, len);
 	while (stack_a)
 	{
 		printf("stack value: %d\n", stack_a->value);
