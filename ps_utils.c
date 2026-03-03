@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:13:32 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/02 14:45:53 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 14:45:27 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,6 @@ t_node	*create_node(int value)
 	new_node->value = value;
 	new_node->next = NULL;
 	return (new_node);
-}
-
-void	push(t_node **stack, int value)
-{
-	t_node	*new_top;
-
-	new_top = create_node(value);
-	if (!new_top)
-		return ;
-	new_top->next = *stack;
-	*stack = new_top;
-}
-
-int	remove_top(t_node **stack)
-{
-	t_node	*temp;
-	int		value;
-
-	temp = *stack;
-	value = temp->value;
-	*stack = temp->next;
-	free(temp);
-	return (value);
 }
 
 int	stack_size(t_node *stack)

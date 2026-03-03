@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:53:13 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 14:02:45 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 14:51:42 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,38 @@ void	sort_two(t_node **stack)
 		sa(&stack);
 }
 
+void	sort_three_helper(t_node **stack, int i, int j, int k)
+{
+	if (i < j && j > k && i < k)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (i > j && j < k && i < k)
+		sa(stack);
+	else if (i < j && j > k && i > k)
+		rra(stack);
+	else if (i > j && j < k && i > k)
+		ra(stack);
+	else if (i > j && j > k && i > k)
+	{
+		sa(stack);
+		rra(stack);
+	}
+}
+
 void	sort_three(t_node **stack)
 {
-	if (!*stack || !(*stack)->next)
+	int	i;
+	int	j;
+	int	k;
+
+	if (!*stack || !(*stack)->next || !(*stack)->next->next)
 		return ;
-	if (is_sorted(&stack))
+	if (is_sorted(*stack))
 		return ;
+	i = (*stack)->value;
+	j = (*stack)->next->value;
+	k = (*stack)->next->next->value;
+	sort_three_helper(stack, i, j, k);
 }
