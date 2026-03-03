@@ -17,7 +17,9 @@ SRC = main.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
-	move.c \
+	push.c \
+	swap.c \
+	rotate.c \
 	small_sort.c \
 	
 # COLORS FOR OUTPUT
