@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 15:27:00 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/02 18:28:44 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/03 13:52:03 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,15 +119,17 @@ void	rr(t_node **stack_a, t_node **stack_b)
 void	reverse_rotate(t_node **stack)
 {
 	t_node	*tmp;
-	t_node	*first_node;
+	t_node	*new_top;
 
 	if (!*stack || !(*stack)->next)
 		return ;
 	tmp = *stack;
 	while (tmp->next->next)
 		tmp = tmp->next;
-	first_node = tmp;
-	*stack = first_node;
+	new_top = tmp->next;
+	new_top->next = *stack;
+	tmp->next = NULL;
+	*stack = new_top;
 }
 
 void	rra(t_node **stack_a)
