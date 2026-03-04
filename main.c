@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 17:44:31 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/04 17:17:08 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	stack_a = build_stack(num_arr, len);
 	ranking(stack_a);
 	// small_sort(&stack_a, len);
-	while (stack_a)
+	while (stack_a != NULL)
 	{
 		printf("value: %d\trank: %d\n", stack_a->value, stack_a->rank);
 		stack_a = stack_a->next;
