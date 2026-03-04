@@ -6,21 +6,16 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/04 00:09:19 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/04 17:56:21 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*create_node(int value)
+void	push_swap(t_node **stack_a, t_node **stack_b, int len)
 {
-	t_node	*new_node;
-
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->value = value;
-	new_node->rank = 0;
-	new_node->next = NULL;
-	return (new_node);
+	if (len <= 5)
+		sort_small(stack_a, stack_b, len);
+	else if (len > 5)
+		sort_turk(stack_a, stack_b, len);
 }
