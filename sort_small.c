@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   turk_sort.c                                        :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 16:01:50 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 23:48:19 by koodal           ###   ########.fr       */
+/*   Created: 2026/03/04 17:29:20 by koodal            #+#    #+#             */
+/*   Updated: 2026/03/04 17:37:45 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ranking(t_node *stack)
+void	sort_small(t_node **stack_a, t_node **stack_b, int i)
 {
-	t_node	*current_node;
-	t_node	*node_scan;
-	int		rank;
-
-	current_node = stack;
-	while (current_node != NULL)
-	{
-		rank = 0;
-		node_scan = stack;
-		while (node_scan != NULL)
-		{
-			if (node_scan->value < current_node->value)
-				rank++;
-			node_scan = node_scan->next;
-		}
-		current_node->rank = rank;
-		current_node = current_node->next;
-	}
+	if (is_sorted(*stack_a))
+		exit(1);
+	else if (i == 2)
+		sort_two(stack_a);
+	else if (i == 3)
+		sort_three(stack_a);
+	else if (i == 4)
+		sort_four(stack_a, stack_b);
+	else if (i == 5)
+		sort_five(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 23:51:09 by koodal            #+#    #+#             */
-/*   Updated: 2026/03/04 17:13:03 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/04 17:18:46 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	ranking(*stack_a);
-	while ((*stack_b) != NULL || (*stack_b)->next != NULL)
+	while (stack_size(*stack_b) < 2)
 	{
 		if ((*stack_a)->rank == 0 || (*stack_a)->rank == 1)
 			pb(stack_a, stack_b);

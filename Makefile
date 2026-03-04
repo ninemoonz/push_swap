@@ -13,15 +13,18 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 
 SRC = main.c \
-	push_swap.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
+	push_swap.c \
 	push.c \
-	swap.c \
 	rotate.c \
-	small_sort.c \
-	turk_sort.c \
+	swap.c \
+	sort_two.c \
+	sort_three.c \
+	sort_four.c \
+	sort_five.c \
+	sort_small.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m

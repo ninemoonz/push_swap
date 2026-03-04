@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/04 00:09:38 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/04 17:30:37 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int					count_strarr(char **arr);
 int					is_sorted(t_node *stack);
 void				sort_two(t_node **stack);
 void				sort_three(t_node **stack);
-void				small_sort(t_node **stack, int count);
-void				sort_it(t_node **stack, int count);
-
+void				sort_four(t_node **stack_a, t_node **stack_b);
+void				sort_five(t_node **stack_a, t_node **stack_b);
+void				sort_small(t_node **stack_a, t_node **stack_b, int i);
 void				ranking(t_node *stack);
 
 #endif
