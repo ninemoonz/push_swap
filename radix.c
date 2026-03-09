@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 16:34:18 by kkweon           ###   ########.fr       */
+/*   Created: 2026/03/09 14:10:17 by kkweon            #+#    #+#             */
+/*   Updated: 2026/03/09 16:31:17 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_node **stack_a, t_node **stack_b, int len)
+void	radix(t_node **stack_a, t_node **stack_b, int len)
 {
-	if (len <= 5)
-		sort_small(stack_a, stack_b, len);
-	else
-		radix(stack_a, stack_b, len);
+	int i;
+	int j;
+	int max_bits;
+
+	max_bits = get_max_bits(len);
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < len)
+		{
+			if (((*stack_a)->rank & 1) == 0)
+				pb(stack_a, stack_b);
+			else
+				ra(stack_a);
+			j++;
+		}
+		pa(stack_a, stack_b);
+		i++;
+	}
 }

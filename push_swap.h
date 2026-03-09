@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/04 17:57:32 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/09 16:31:49 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void				sort_five(t_node **stack_a, t_node **stack_b);
 void				sort_small(t_node **stack_a, t_node **stack_b, int i);
 void				ranking(t_node *stack);
 void				push_swap(t_node **stack_a, t_node **stack_b, int len);
+int					get_max_bits(int len);
+void				radix(t_node **stack_a, t_node **stack_b, int len);
 
 #endif

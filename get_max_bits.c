@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   get_max_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 16:34:18 by kkweon           ###   ########.fr       */
+/*   Created: 2026/03/09 16:25:34 by kkweon            #+#    #+#             */
+/*   Updated: 2026/03/09 16:26:11 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_node **stack_a, t_node **stack_b, int len)
+int	get_max_bits(int len)
 {
-	if (len <= 5)
-		sort_small(stack_a, stack_b, len);
-	else
-		radix(stack_a, stack_b, len);
+	int bits;
+
+	bits = 0;
+	while (len > 0)
+	{
+		len = len >> 1;
+		bits++;
+	}
+	return (bits);
 }

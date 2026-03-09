@@ -25,6 +25,8 @@ SRC = main.c \
 	sort_four.c \
 	sort_five.c \
 	sort_small.c \
+	radix.c \
+	get_max_bits.c \
 	
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m
