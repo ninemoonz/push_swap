@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/04 17:56:59 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/09 18:14:05 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int	main(int argc, char **argv)
 	push_swap(&stack_a, &stack_b, len);
 	free(num_arr);
 	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

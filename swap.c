@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:56:22 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 16:56:46 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/09 18:24:24 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	swap(t_node **stack)
 	tmp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = tmp;
+	tmp = (*stack)->rank;
+	(*stack)->rank = (*stack)->next->rank;
+	(*stack)->next->rank = tmp;
 }
 
 void	sa(t_node **stack_a)

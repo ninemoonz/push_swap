@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:10:17 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 16:31:17 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/09 18:20:50 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ void	radix(t_node **stack_a, t_node **stack_b, int len)
 		j = 0;
 		while (j < len)
 		{
-			if (((*stack_a)->rank & 1) == 0)
+			if ((((*stack_a)->rank >> i & 1)) == 0)
 				pb(stack_a, stack_b);
 			else
 				ra(stack_a);
 			j++;
 		}
-		pa(stack_a, stack_b);
+		while (!is_empty(*stack_b))
+			pa(stack_a, stack_b);
 		i++;
 	}
 }
