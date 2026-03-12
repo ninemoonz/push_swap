@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:55:26 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 16:56:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/12 16:45:20 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,26 @@ void	push(t_node **stack, int value)
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {
+	t_node	*tmp;
+
 	if (!*stack_b)
 		return ;
-	push(stack_a, remove_top(stack_b));
+	tmp = *stack_b;
+	*stack_b = tmp->next;
+	tmp->next = *stack_a;
+	*stack_a = tmp;
 	ft_printf("pa\n");
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
 {
+	t_node	*tmp;
+
 	if (!*stack_a)
 		return ;
-	push(stack_b, remove_top(stack_a));
+	tmp = *stack_a;
+	*stack_a = tmp->next;
+	tmp->next = *stack_b;
+	*stack_b = tmp;
 	ft_printf("pb\n");
 }
