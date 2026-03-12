@@ -6,41 +6,11 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/03 17:10:56 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/11 18:13:43 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-int	is_sign(char c)
-{
-	return (c == '+' || c == '-');
-}
-
-int	validity_check(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (!s || s[0] == '\0')
-		return (0);
-	if (is_sign(s[i]))
-		i++;
-	if (s[i] == '\0')
-		return (0);
-	while (s[i])
-	{
-		if (!is_digit(s[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 void	double_check(int argc, int *num_arr)
 {
@@ -81,7 +51,7 @@ int	atoi_check(char *s)
 		n = n * 10 + (s[i] - '0');
 		if (sign == 1 && n > INT_MAX)
 			print_error();
-		if (sign == -1 && -n < INT_MIN)
+		if (sign == -1 && n < -(long)INT_MIN)
 			print_error();
 		i++;
 	}

@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   num_check_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/03 23:51:09 by koodal            #+#    #+#             */
-/*   Updated: 2026/03/11 18:09:22 by kkweon           ###   ########.fr       */
+/*   Created: 2026/03/11 18:01:50 by kkweon            #+#    #+#             */
+/*   Updated: 2026/03/11 18:17:27 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_five(t_node **stack_a, t_node **stack_b)
+int	is_digit(char c)
 {
-	while (stack_size(*stack_b) < 2)
+	return (c >= '0' && c <= '9');
+}
+
+int	is_sign(char c)
+{
+	return (c == '+' || c == '-');
+}
+
+int	validity_check(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s || s[0] == '\0')
+		return (0);
+	if (is_sign(s[i]))
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i])
 	{
-		if ((*stack_a)->rank == 0 || (*stack_a)->rank == 1)
-			pb(stack_a, stack_b);
-		else
-			ra(stack_a);
+		if (!is_digit(s[i]))
+			return (0);
+		i++;
 	}
-	if ((*stack_b)->rank == 0)
-		sb(stack_b);
-	sort_three(stack_a);
-	while ((*stack_b) != NULL)
-		pa(stack_a, stack_b);
+	return (1);
 }

@@ -6,19 +6,31 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 18:14:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/11 17:52:59 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*build_stack(int *num_arr, int len)
+int	count_intarr(int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+t_node	*build_stack(int *num_arr)
 {
 	t_node	*stack;
 	int		i;
 
 	stack = NULL;
-	i = len - 1;
+	i = count_intarr(num_arr);
 	while (i >= 0)
 	{
 		push(&stack, num_arr[i]);
@@ -31,26 +43,14 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	char	**tmp;
 	int		*num_arr;
-	int		len;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc <= 1)
-		print_error();
-	if (argc == 2)
-	{
-		tmp = ft_split(argv[1], ' ');
-		len = count_strarr(tmp);
-		split_free(tmp, len);
-	}
-	else
-		len = argc - 1;
 	num_arr = num_check(argc, argv);
-	stack_a = build_stack(num_arr, len);
+	stack_a = build_stack(num_arr);
 	ranking(stack_a);
-	push_swap(&stack_a, &stack_b, len);
+	push_swap(&stack_a, &stack_b);
 	free(num_arr);
 	free_stack(stack_a);
 	free_stack(stack_b);

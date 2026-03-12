@@ -12,22 +12,24 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
 
-SRC = main.c \
+SRC = get_max_bits.c \
+	main.c \
+	num_check_utils.c \
 	num_check.c \
 	print_error.c \
 	ps_utils.c \
 	push_swap.c \
 	push.c \
-	rotate.c \
-	swap.c \
-	sort_two.c \
-	sort_three.c \
-	sort_four.c \
-	sort_five.c \
-	sort_small.c \
 	radix.c \
-	get_max_bits.c \
-	
+	reverse_rotate.c \
+	rotate.c \
+	sort_five.c \
+	sort_four.c \
+	sort_three.c \
+	sort_two.c \
+	sort_small.c \
+	swap.c \
+
 # COLORS FOR OUTPUT
 GREEN = \033[0;31m
 RED = \033[0;31m

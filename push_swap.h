@@ -6,12 +6,12 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 16:31:49 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/12 16:27:41 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 # include "push_swap.h"
@@ -62,8 +62,9 @@ void				sort_four(t_node **stack_a, t_node **stack_b);
 void				sort_five(t_node **stack_a, t_node **stack_b);
 void				sort_small(t_node **stack_a, t_node **stack_b, int i);
 void				ranking(t_node *stack);
-void				push_swap(t_node **stack_a, t_node **stack_b, int len);
+void				push_swap(t_node **stack_a, t_node **stack_b);
 int					get_max_bits(int len);
 void				radix(t_node **stack_a, t_node **stack_b, int len);
+int					validity_check(char *s);
 
 #endif

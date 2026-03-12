@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:25:34 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/09 16:26:11 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/11 17:55:52 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_max_bits(int len)
 {
-	int bits;
+	int	bits;
 
 	bits = 0;
 	while (len > 0)
