@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/16 13:29:15 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 17:39:07 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 # include <limits.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
 

@@ -10,7 +10,7 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
 # Compiler and flags
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I.
+CFLAGS := -Wall -Wextra -Werror -I./libft -I./ft_printf  -I. -g
 
 SRC = get_max_bits.c \
 	main.c \

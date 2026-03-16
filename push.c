@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:55:26 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/12 16:45:20 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 16:51:47 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	push(t_node **stack, int value)
 
 	new_top = create_node(value);
 	if (!new_top)
-		return ;
+	{
+		free_stack(*stack);
+		print_error();
+	}
 	new_top->next = *stack;
 	*stack = new_top;
 }

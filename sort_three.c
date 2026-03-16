@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 23:52:46 by koodal            #+#    #+#             */
-/*   Updated: 2026/03/03 23:53:13 by koodal           ###   ########.fr       */
+/*   Updated: 2026/03/16 17:35:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	sort_three(t_node **stack)
 		return ;
 	if (is_sorted(*stack))
 		return ;
-	i = (*stack)->value;
-	j = (*stack)->next->value;
-	k = (*stack)->next->next->value;
+	i = (*stack)->rank;
+	j = (*stack)->next->rank;
+	k = (*stack)->next->next->rank;
 	sort_three_helper(stack, i, j, k);
 }

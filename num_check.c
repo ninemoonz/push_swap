@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/16 14:25:33 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 17:39:24 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ int	atoi_check(char *s)
 	while (s[i])
 	{
 		n = n * 10 + (s[i] - '0');
-		if (sign == 1 && n > INT_MAX || sign == -1 && n < -(long)INT_MIN)
-			print_error();
+		if ((sign == 1 && n > INT_MAX) || (sign == -1 && n < -(long)INT_MIN))
+			return (false);
 		i++;
 	}
-	return ((int)(sign * n));
+	return (true);
 }
 
 int	*args_process(char **char_arr, int len)
@@ -66,16 +66,16 @@ int	*args_process(char **char_arr, int len)
 
 	num_arr = (int *)malloc((len) * sizeof(int));
 	if (!num_arr)
-		print_error();
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		if (!validity_check(char_arr[i]))
+		if (!validity_check(char_arr[i]) || !atoi_check(char_arr[i]))
 		{
 			free(num_arr);
 			print_error();
 		}
-		num_arr[i] = atoi_check(char_arr[i]);
+		num_arr[i] = ft_atoi(char_arr[i]);
 		i++;
 	}
 	double_check(len, num_arr);
