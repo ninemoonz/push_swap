@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:46:06 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/12 16:27:41 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 13:29:15 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
-# include "push_swap.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -27,9 +26,11 @@ typedef struct s_node
 }					t_node;
 
 int					main(int argc, char **argv);
-int					*num_check(int argc, char **argv);
+t_node				*build_stack(int *num_arr, int len);
+int					count_strarr(char **arr);
+
+int					*num_check(int argc, char **argv, int *len);
 void				print_error(void);
-void				split_free(char **arr_malloc, int i);
 t_node				*create_node(int value);
 
 int					remove_top(t_node **stack);
@@ -53,7 +54,6 @@ int					stack_size(t_node *stack);
 int					is_empty(t_node *stack);
 void				free_stack(t_node *stack);
 void				split_free(char **arr_malloc, int i);
-int					count_strarr(char **arr);
 
 int					is_sorted(t_node *stack);
 void				sort_two(t_node **stack);

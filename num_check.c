@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/11 18:13:43 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 13:23:34 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,25 @@ int	*args_process(char **char_arr, int len)
 	return (num_arr);
 }
 
-int	*num_check(int argc, char **argv)
+int	*num_check(int argc, char **argv, int *len)
 {
 	char	**char_arr;
 	int		*int_arr;
-	int		len;
 
 	if (argc <= 1)
 		return (NULL);
 	if (argc == 2)
 	{
 		char_arr = ft_split(argv[1], ' ');
-		len = count_strarr(char_arr);
+		*len = count_strarr(char_arr);
 	}
 	else
 	{
 		char_arr = argv + 1;
-		len = argc - 1;
+		*len = argc - 1;
 	}
-	int_arr = args_process(char_arr, len);
+	int_arr = args_process(char_arr, *len);
 	if (argc == 2)
-		split_free(char_arr, len);
+		split_free(char_arr, *len);
 	return (int_arr);
 }
