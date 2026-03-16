@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:44:01 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/11 18:05:04 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 13:49:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	push_swap(t_node **stack_a, t_node **stack_b)
 {
 	int	len;
 
+	if (is_sorted(*stack_a))
+		return ;
 	len = stack_size(*stack_a);
 	if (len <= 5)
 		sort_small(stack_a, stack_b, len);

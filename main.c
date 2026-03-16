@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 17:14:24 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/16 13:21:20 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 13:49:19 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	main(int argc, char **argv)
 	else
 		len = argc - 1;
 	stack_a = build_stack(num_arr, len);
-	ranking(stack_a);
 	push_swap(&stack_a, &stack_b);
 	free(num_arr);
 	free_stack(stack_a);
