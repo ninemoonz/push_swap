@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:13:32 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/11 18:08:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 18:04:38 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,6 @@ void	free_stack(t_node *stack)
 		free(stack);
 		stack = next;
 	}
-}
-
-int	count_strarr(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	return (i);
 }
 
 int	is_sorted(t_node *stack)

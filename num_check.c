@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 17:05:45 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/16 17:39:24 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/17 13:15:54 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	atoi_check(char *s)
 	while (s[i])
 	{
 		n = n * 10 + (s[i] - '0');
-		if ((sign == 1 && n > INT_MAX) || (sign == -1 && n < -(long)INT_MIN))
+		if ((sign == 1 && n > INT_MAX) || (sign == -1 && n > -(long)INT_MIN))
 			return (false);
 		i++;
 	}

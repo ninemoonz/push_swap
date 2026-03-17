@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 18:01:50 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/11 18:17:27 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/16 18:07:42 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,14 @@ int	validity_check(char *s)
 		i++;
 	}
 	return (1);
+}
+
+int	count_strarr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

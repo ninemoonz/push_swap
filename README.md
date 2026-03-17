@@ -13,7 +13,9 @@ Struct:
 
 Movements:
 
-Algorithm applied in this project is Radix sort:
+Algorithm:
+Radix sort
+What is **Radix Sort**
 In order to apply radix
 - index numbering or ranking
 
@@ -29,7 +31,8 @@ ARG="input numbers"; ./push_swap $ARG | ./checker_linux $ARG
 
 ## Resources
 [Geek for Geeks - Struct](https://www.geeksforgeeks.org/c/structures-c/) \
-[Geek for Geeks - Linked List](https://www.geeksforgeeks.org/c/linked-list-in-c/)
+[Geek for Geeks - Linked List](https://www.geeksforgeeks.org/c/linked-list-in-c/) \
+[Geek for Geeks - Radix Sort](https://www.geeksforgeeks.org/dsa/radix-sort/)
 
 ---
 
