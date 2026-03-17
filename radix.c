@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:10:17 by kkweon            #+#    #+#             */
-/*   Updated: 2026/03/12 16:40:38 by kkweon           ###   ########.fr       */
+/*   Updated: 2026/03/17 17:31:42 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	radix(t_node **stack_a, t_node **stack_b, int len)
 	int	j;
 	int	max_bits;
 
-	max_bits = get_max_bits(len);
+	max_bits = get_max_bits(len - 1);
 	i = 0;
 	while (i < max_bits)
 	{

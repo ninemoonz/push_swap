@@ -32,9 +32,11 @@ Input requirements:
     ```
 - INT MIN, INT MAX Overflow check
     ```bash
-    ./push_swap 3 2 -2147483648
+    # less than INT MIN
+    ./push_swap 3 2 -2147483649
     Error
-    ./push_swap 3 2 2147483647
+    # more than INT MAX
+    ./push_swap 3 2 2147483648
     Error
     ```
 - Spacings: the program should be able to accept multiple arguments or as a single string with space-separated numbers.
