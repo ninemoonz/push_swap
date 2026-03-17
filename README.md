@@ -23,22 +23,18 @@ Input requirements:
 - No repeated numbers
     ```bash
     ./push_swap 1 0 1
-    #return
     Error
     ```
 - Only digits
     ```bash
     ./push_swap one 3 2
-    #return
     Error
     ```
 - INT MIN, INT MAX Overflow check
     ```bash
     ./push_swap 3 2 -2147483648
-    #return
     Error
     ./push_swap 3 2 2147483647
-    #return
     Error
     ```
 - Spacings: the program should be able to accept multiple arguments or as a single string with space-separated numbers.
@@ -95,6 +91,8 @@ ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' '); ./push_swap $ARG | ./checker $ARG
 ---
 
 ## Resources
+[42 subject file](https://cdn.intra.42.fr/pdf/pdf/192673/en.subject.pdf) \
+[Medium - Push_Swap Tutorial](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e) \
 [Geek for Geeks - Struct](https://www.geeksforgeeks.org/c/structures-c/) \
 [Geek for Geeks - Linked List](https://www.geeksforgeeks.org/c/linked-list-in-c/) \
 [Geek for Geeks - Radix Sort](https://www.geeksforgeeks.org/dsa/radix-sort/)
